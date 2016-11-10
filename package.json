@@ -1,0 +1,22 @@
+{
+    "name": "ssdeep.js",
+    "description": "Pure javascript module for calculating ssdeep compatible context triggered piecewise hashes.",
+    "keywords": [
+        "fuzzy",
+        "hashing",
+        "context",
+        "triggered",
+        "piecewise",
+        "hash",
+        "ctph",
+	"javascript",
+        "ssdeep"
+    ],
+    "author": "ThreatPinch <development@threatpinch.com>",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/cloudtracer/ssdeep.js.git"
+    },
+    "main": "ssdeep.js",
+    "version": "0.0.1"
+}
