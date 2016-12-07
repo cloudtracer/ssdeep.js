@@ -1,0 +1,103 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node', '/usr/local/bin/npm', 'publish' ]
+2 info using npm@3.3.12
+3 info using node@v5.2.0
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/home/brewerm/Dropbox/CTGithub/ssdeep.js',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz not in flight; packing
+9 info lifecycle ssdeep.js@0.0.1~prepublish: ssdeep.js@0.0.1
+10 silly lifecycle ssdeep.js@0.0.1~prepublish: no script for prepublish, continuing
+11 verbose tar pack [ '/home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz',
+11 verbose tar pack   '/home/brewerm/Dropbox/CTGithub/ssdeep.js' ]
+12 verbose tarball /home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz
+13 verbose folder /home/brewerm/Dropbox/CTGithub/ssdeep.js
+14 verbose addLocalTarball adding from inside cache /home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz
+15 silly cache afterAdd ssdeep.js@0.0.1
+16 verbose afterAdd /home/brewerm/.npm/ssdeep.js/0.0.1/package/package.json not in flight; writing
+17 verbose afterAdd /home/brewerm/.npm/ssdeep.js/0.0.1/package/package.json written
+18 silly publish { name: 'ssdeep.js',
+18 silly publish   description: 'Pure javascript module for calculating ssdeep compatible context triggered piecewise hashes.',
+18 silly publish   keywords:
+18 silly publish    [ 'fuzzy',
+18 silly publish      'hashing',
+18 silly publish      'context',
+18 silly publish      'triggered',
+18 silly publish      'piecewise',
+18 silly publish      'hash',
+18 silly publish      'ctph',
+18 silly publish      'javascript',
+18 silly publish      'ssdeep' ],
+18 silly publish   author: { name: 'ThreatPinch', email: 'development@threatpinch.com' },
+18 silly publish   repository:
+18 silly publish    { type: 'git',
+18 silly publish      url: 'git+https://github.com/cloudtracer/ssdeep.js.git' },
+18 silly publish   main: 'ssdeep.js',
+18 silly publish   version: '0.0.1',
+18 silly publish   readme: '# ssdeep.js - Pure JS implementation of ssdeep\n\nJavaScript library for generating and comparing ssdeep hashes within javascript. Module is written in pure javascript so it will work in NodeJS and the browser.\n\nThis code a modified version of [huwenshou\'s](https://github.com/huwenshuo) ctph.js library with SSDEEP compatible output.\n\n\n# Install\n\n```\nnpm install ssdeep.js\n```\n\n# Example\n\n```js\nvar ssdeep = require("ssdeep.js");\n\nvar eicarstring = ssdeep.digest("X5O!P%@AP[4\\\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");\nconsole.log("ssdeep1: ", eicarstring);\n\neicarstring2 = ssdeep.digest("X5O!P%@AP[4\\\\PZX54(P^)7CC)7}$EICAR-THREATPINCH-ANTIVIRUS-TEST-FILE!$H+H*");\nconsole.log("ssdeep2: ", eicarstring2);\n\nconsole.log("Similarity:", ssdeep.similarity(eicarstring, eicarstring2));\n\n```\n\n### OUTPUT:\n```\nssdeep1:  3:a+JraNvsgzsVqSwHq9:tJuOgzsko\nssdeep2:  3:a+JraNvsg7QhyqzWwHq9:tJuOg7Q4Wo\nSimilarity: 70\n```\n\n# License\nMIT\n',
+18 silly publish   readmeFilename: 'README.md',
+18 silly publish   gitHead: '0a67a3212034c21e11a9039b130be7defea56393',
+18 silly publish   bugs: { url: 'https://github.com/cloudtracer/ssdeep.js/issues' },
+18 silly publish   homepage: 'https://github.com/cloudtracer/ssdeep.js#readme',
+18 silly publish   _id: 'ssdeep.js@0.0.1',
+18 silly publish   scripts: {},
+18 silly publish   _shasum: 'ec3a736e8ad71c7b8d6cfd14c261f0e528e22e7c',
+18 silly publish   _from: '.' }
+19 verbose getPublishConfig undefined
+20 silly mapToRegistry name ssdeep.js
+21 silly mapToRegistry using default registry
+22 silly mapToRegistry registry https://registry.npmjs.org/
+23 silly mapToRegistry uri https://registry.npmjs.org/ssdeep.js
+24 verbose publish registryBase https://registry.npmjs.org/
+25 silly publish uploading /home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz
+26 verbose request uri https://registry.npmjs.org/ssdeep.js
+27 verbose request sending authorization for write operation
+28 info attempt registry request try #1 at 11:50:48 AM
+29 verbose request using bearer token for auth
+30 verbose request id 04decea8cf82ea9e
+31 http request PUT https://registry.npmjs.org/ssdeep.js
+32 http 403 https://registry.npmjs.org/ssdeep.js
+33 verbose headers { 'content-type': 'application/json',
+33 verbose headers   'cache-control': 'max-age=300',
+33 verbose headers   'content-length': '95',
+33 verbose headers   'accept-ranges': 'bytes',
+33 verbose headers   date: 'Wed, 07 Dec 2016 16:50:48 GMT',
+33 verbose headers   via: '1.1 varnish',
+33 verbose headers   connection: 'keep-alive',
+33 verbose headers   'x-served-by': 'cache-sea1925-SEA',
+33 verbose headers   'x-cache': 'MISS',
+33 verbose headers   'x-cache-hits': '0',
+33 verbose headers   'x-timer': 'S1481129448.676014,VS0,VE125',
+33 verbose headers   vary: 'Accept-Encoding' }
+34 verbose request invalidating /home/brewerm/.npm/registry.npmjs.org/ssdeep.js on PUT
+35 error publish Failed PUT 403
+36 verbose stack Error: "You cannot publish over the previously published version 0.0.1." : ssdeep.js
+36 verbose stack     at makeError (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:264:12)
+36 verbose stack     at CachingRegistryClient.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:252:14)
+36 verbose stack     at Request._callback (/usr/local/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:172:14)
+36 verbose stack     at Request.self.callback (/usr/local/lib/node_modules/npm/node_modules/request/request.js:198:22)
+36 verbose stack     at emitTwo (events.js:88:13)
+36 verbose stack     at Request.emit (events.js:173:7)
+36 verbose stack     at Request.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1082:10)
+36 verbose stack     at emitOne (events.js:83:20)
+36 verbose stack     at Request.emit (events.js:170:7)
+36 verbose stack     at IncomingMessage.<anonymous> (/usr/local/lib/node_modules/npm/node_modules/request/request.js:1009:12)
+37 verbose statusCode 403
+38 verbose pkgid ssdeep.js
+39 verbose cwd /home/brewerm/Dropbox/CTGithub/ssdeep.js
+40 error Linux 4.4.0-51-generic
+41 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "publish"
+42 error node v5.2.0
+43 error npm  v3.3.12
+44 error code E403
+45 error "You cannot publish over the previously published version 0.0.1." : ssdeep.js
+46 error If you need help, you may report this error at:
+46 error     <https://github.com/npm/npm/issues>
+47 verbose exit [ 1, true ]
