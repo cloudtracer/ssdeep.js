@@ -26,10 +26,12 @@ console.log("Similarity:", ssdeep.similarity(eicarstring, eicarstring2));
 
 ```
 
-OUTPUT:
+### OUTPUT:
+```
 ssdeep1:  3:a+JraNvsgzsVqSwHq9:tJuOgzsko
 ssdeep2:  3:a+JraNvsg7QhyqzWwHq9:tJuOg7Q4Wo
 Similarity: 70
+```
 
 # License
 MIT
