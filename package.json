@@ -18,5 +18,5 @@
         "url": "https://github.com/cloudtracer/ssdeep.js.git"
     },
     "main": "ssdeep.js",
-    "version": "0.0.1"
+    "version": "0.0.2"
 }

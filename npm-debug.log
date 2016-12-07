@@ -43,7 +43,7 @@
 18 silly publish   version: '0.0.1',
 18 silly publish   readme: '# ssdeep.js - Pure JS implementation of ssdeep\n\nJavaScript library for generating and comparing ssdeep hashes within javascript. Module is written in pure javascript so it will work in NodeJS and the browser.\n\nThis code a modified version of [huwenshou\'s](https://github.com/huwenshuo) ctph.js library with SSDEEP compatible output.\n\n\n# Install\n\n```\nnpm install ssdeep.js\n```\n\n# Example\n\n```js\nvar ssdeep = require("ssdeep.js");\n\nvar eicarstring = ssdeep.digest("X5O!P%@AP[4\\\\PZX54(P^)7CC)7}$EICAR-STANDARD-ANTIVIRUS-TEST-FILE!$H+H*");\nconsole.log("ssdeep1: ", eicarstring);\n\neicarstring2 = ssdeep.digest("X5O!P%@AP[4\\\\PZX54(P^)7CC)7}$EICAR-THREATPINCH-ANTIVIRUS-TEST-FILE!$H+H*");\nconsole.log("ssdeep2: ", eicarstring2);\n\nconsole.log("Similarity:", ssdeep.similarity(eicarstring, eicarstring2));\n\n```\n\n### OUTPUT:\n```\nssdeep1:  3:a+JraNvsgzsVqSwHq9:tJuOgzsko\nssdeep2:  3:a+JraNvsg7QhyqzWwHq9:tJuOg7Q4Wo\nSimilarity: 70\n```\n\n# License\nMIT\n',
 18 silly publish   readmeFilename: 'README.md',
-18 silly publish   gitHead: '0a67a3212034c21e11a9039b130be7defea56393',
+18 silly publish   gitHead: '8d6eb34636c856b59752e315cf00ce69a5713e42',
 18 silly publish   bugs: { url: 'https://github.com/cloudtracer/ssdeep.js/issues' },
 18 silly publish   homepage: 'https://github.com/cloudtracer/ssdeep.js#readme',
 18 silly publish   _id: 'ssdeep.js@0.0.1',
@@ -59,22 +59,22 @@
 25 silly publish uploading /home/brewerm/.npm/ssdeep.js/0.0.1/package.tgz
 26 verbose request uri https://registry.npmjs.org/ssdeep.js
 27 verbose request sending authorization for write operation
-28 info attempt registry request try #1 at 11:50:48 AM
+28 info attempt registry request try #1 at 11:53:30 AM
 29 verbose request using bearer token for auth
-30 verbose request id 04decea8cf82ea9e
+30 verbose request id 31bf19b3bb99745b
 31 http request PUT https://registry.npmjs.org/ssdeep.js
 32 http 403 https://registry.npmjs.org/ssdeep.js
 33 verbose headers { 'content-type': 'application/json',
 33 verbose headers   'cache-control': 'max-age=300',
 33 verbose headers   'content-length': '95',
 33 verbose headers   'accept-ranges': 'bytes',
-33 verbose headers   date: 'Wed, 07 Dec 2016 16:50:48 GMT',
+33 verbose headers   date: 'Wed, 07 Dec 2016 16:53:31 GMT',
 33 verbose headers   via: '1.1 varnish',
 33 verbose headers   connection: 'keep-alive',
-33 verbose headers   'x-served-by': 'cache-sea1925-SEA',
+33 verbose headers   'x-served-by': 'cache-lcy1123-LCY',
 33 verbose headers   'x-cache': 'MISS',
 33 verbose headers   'x-cache-hits': '0',
-33 verbose headers   'x-timer': 'S1481129448.676014,VS0,VE125',
+33 verbose headers   'x-timer': 'S1481129610.642864,VS0,VE1123',
 33 verbose headers   vary: 'Accept-Encoding' }
 34 verbose request invalidating /home/brewerm/.npm/registry.npmjs.org/ssdeep.js on PUT
 35 error publish Failed PUT 403
