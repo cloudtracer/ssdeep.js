@@ -9,7 +9,7 @@
         "piecewise",
         "hash",
         "ctph",
-	"javascript",
+        "javascript",
         "ssdeep"
     ],
     "author": "ThreatPinch <development@threatpinch.com>",
@@ -18,5 +18,11 @@
         "url": "https://github.com/cloudtracer/ssdeep.js.git"
     },
     "main": "ssdeep.js",
-    "version": "0.0.2"
+    "version": "0.0.2",
+    "scripts": {
+        "test": "mocha *.test.js"
+    },
+    "devDependencies": {
+        "mocha": "^8.2.0"
+    }
 }
