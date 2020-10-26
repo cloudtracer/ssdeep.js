@@ -3,7 +3,7 @@ var fs = require('fs');
 var path = require('path');
 var ssdeep = require('.');
 
-var NUM_OF_SAMPLES = 3;
+var NUM_OF_SAMPLES = 4;
 
 function createTest(index) {
     var paddedId = (index < 10) ? '0'+index : index+'';

@@ -11,6 +11,7 @@
     var HASH_PRIME = 16777619;
     var HASH_INIT = 671226215;
     var ROLLING_WINDOW = 7;
+    var MAX_LENGTH = 64; // Max individual hash length in characters
     var B64 = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
 
     //refer http://stackoverflow.com/questions/18729405/how-to-convert-utf8-string-to-byte-array
@@ -165,7 +166,10 @@
     };
 
     function piecewiseHash (bytes, triggerValue) {
-        var signatures = ['','', ''];
+        var signatures = ['','', triggerValue];
+        if (bytes.length === 0) {
+            return signatures;
+        }
         var h1 = HASH_INIT;
         var h2 = HASH_INIT;
         var rh = new RollHash();
@@ -178,14 +182,12 @@
 
             rh.update(thisByte);
 
-            if (signatures[0].length < 63 && rh.sum() % triggerValue === (triggerValue - 1)) {
+            if (signatures[0].length < (MAX_LENGTH-1) && rh.sum() % triggerValue === (triggerValue - 1)) {
                 signatures[0] += B64.charAt(h1&63);
-                signatures[2] = triggerValue;
                 h1 = HASH_INIT;
             }
-            if (signatures[1].length < 31 && rh.sum() % (triggerValue * 2) === (triggerValue * 2 - 1) ) {
+            if (signatures[1].length < (MAX_LENGTH/2-1) && rh.sum() % (triggerValue * 2) === (triggerValue * 2 - 1)) {
                 signatures[1] += B64.charAt(h2&63);
-                signatures[2] = triggerValue;
                 h2 = HASH_INIT;
             }
         }
@@ -195,14 +197,17 @@
     }
 
     function digest (bytes) {
-        var minb = 3;
-        var bi = Math.ceil(Math.log(bytes.length/(64*minb))/Math.log(2));
-        bi = Math.max(3, bi);
-
-        var signatures = piecewiseHash(bytes, minb << bi);
-        while (bi>0 && signatures[0].length < 32){
-            signatures = piecewiseHash(bytes, minb << --bi);
+        var bi = 3;
+        while (bi*MAX_LENGTH < bytes.length) {
+            bi *= 2;
         }
+
+        var signatures;
+        do {
+            signatures = piecewiseHash(bytes, bi);
+            bi = ~~(bi / 2);
+        } while (bi > 3 && signatures[0].length < MAX_LENGTH/2);
+
         return signatures[2] + ':' + signatures[0] + ':' + signatures[1];
     }
 
