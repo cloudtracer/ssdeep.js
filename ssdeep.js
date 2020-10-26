@@ -88,13 +88,6 @@
   		return (xmsw << 16) | (xlsw & 0xFFFF)
   	}
 
-    /*
-    * Bitwise rotate a 32-bit number to the left.
-    */
-    function bit_rol (num, cnt) {
-      return (num << cnt) | (num >>> (32 - cnt))
-    }
-
     //FNV-1 hash
     function fnv (h, c) {
       return (safe_multiply(h,HASH_PRIME) ^ c)>>>0;
