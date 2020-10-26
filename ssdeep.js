@@ -178,17 +178,19 @@
 
             rh.update(thisByte);
 
-            if (i === (len - 1) || rh.sum() % triggerValue === (triggerValue - 1)) {
+            if (signatures[0].length < 63 && rh.sum() % triggerValue === (triggerValue - 1)) {
                 signatures[0] += B64.charAt(h1&63);
                 signatures[2] = triggerValue;
                 h1 = HASH_INIT;
             }
-            if (i === (len - 1) || rh.sum() % (triggerValue * 2) === (triggerValue * 2 - 1) ) {
+            if (signatures[1].length < 31 && rh.sum() % (triggerValue * 2) === (triggerValue * 2 - 1) ) {
                 signatures[1] += B64.charAt(h2&63);
                 signatures[2] = triggerValue;
                 h2 = HASH_INIT;
             }
         }
+        signatures[0] += B64.charAt(h1&63);
+        signatures[1] += B64.charAt(h2&63);
         return signatures;
     }
 
