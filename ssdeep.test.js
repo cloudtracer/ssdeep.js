@@ -10,7 +10,7 @@ function createTest(index) {
     var basePath = path.resolve(__dirname, 'test', 'sample-'+paddedId);
     it('produces the correct digest for ' + basePath + '.dat', function() {
         var sampleData = fs.readFileSync(basePath + '.dat');
-        var expectedHash = fs.readFileSync(basePath + '.hash').toString();
+        var expectedHash = fs.readFileSync(basePath + '.hash').toString().trim();
         var actualHash = ssdeep.digest(sampleData);
         assert.strictEqual(actualHash, expectedHash);
     });
